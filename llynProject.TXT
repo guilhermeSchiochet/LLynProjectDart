@@ -1,0 +1,4 @@
+**Projeto pessoal**
+
++ Criação da tela inicial.
++ Sera adicionado uma aba onde ira ter um calculador de notas escolares, Um projeto feito quando estava começando a mexer com flutter e dart 
