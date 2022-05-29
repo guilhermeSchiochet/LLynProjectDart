@@ -38,7 +38,12 @@ class _ListaEnqueteViewState extends State<PrincipalView> {
   }
 
   Widget? _montaConteudo(){
-    return returnBotao();
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        this.returnBotao(),
+      ],
+    );
   }
 
   Widget returnBotao(){

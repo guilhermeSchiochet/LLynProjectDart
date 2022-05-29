@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../componente/botao.dart';
 
 class NotasEscolaresView extends StatefulWidget {
   const NotasEscolaresView({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class Notas  extends State<NotasEscolaresView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _returnAppBar(),
-      body: null,
+      body: this._montaConteudo(),
       
     );
   }
@@ -30,4 +31,14 @@ class Notas  extends State<NotasEscolaresView> {
       ),
     );
   }
+
+  
+  Widget? _montaConteudo(){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+      ],
+    );
+  }
+
 }

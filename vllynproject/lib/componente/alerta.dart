@@ -39,7 +39,7 @@ class Alerta extends BaseMensagem{
     if(this.botoes == null) {
       botoes.add(
         TextButton(
-         child: const Text('Confirmar', style: TextStyle(color: Colors.lightBlue),),
+         child: const Text('cancelar', style: TextStyle(color: Colors.lightBlue),),
           onPressed: () {},
         ),
       );
