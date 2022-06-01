@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vllynproject/View/notas_escolares.view.dart';
+import 'package:vllynproject/componente/botao.dart';
 
 class PrincipalView extends StatefulWidget {
   const PrincipalView({Key? key}) : super(key: key);
@@ -31,7 +32,7 @@ class _ListaEnqueteViewState extends State<PrincipalView> {
       centerTitle: true,
       flexibleSpace: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [Colors.purple, Colors.red])
+          gradient: LinearGradient(colors: [Color.fromARGB(255, 156, 39, 176), Color.fromARGB(255, 244, 67, 54)])
         ),
       ),
     );
@@ -47,27 +48,14 @@ class _ListaEnqueteViewState extends State<PrincipalView> {
   }
 
   Widget returnBotao(){
-    return Padding(
-      padding: const EdgeInsets.all(20),
-      child: Center(
-        child: ElevatedButton (
-          style: ElevatedButton.styleFrom(
-             primary: Color.fromRGBO(244, 67, 54, 1),
-             onSurface: Colors.black,
-             elevation: 20,
-             shadowColor: Colors.black,
-             fixedSize: Size(250, 50)
-          ),
-          child: Text('Nota'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => NotasEscolaresView())
-            );
-          },
-        ),
+    return Center(
+      child: Botao(
+        cor: Color.fromARGB(255, 244, 67, 54),
+        onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => NotasEscolaresView())),
+        titulo: 'Notas',
       ),
     );
+
   }
 
   Widget returnEndDrawer(){

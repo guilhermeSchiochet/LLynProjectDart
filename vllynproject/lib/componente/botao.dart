@@ -1,68 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:vllynproject/componente/base_botao.dart';
 
-class Botao {
 
-  final Size?    fixedSize;
-  final double   padding;
-  final Color?   primary;
-  final Color?   onSurface;
-  final Color?   shadowColor;
-  final String?  titulo;
-  final double?  elevation;
-  final Function onPressed;
-  
+class Botao extends StatelessWidget implements BaseBotao {
+
+  final Color cor;
+  final String? titulo;
+  final Color? iconColor;
+  final Function? onPressed;
+
   Botao({
-    required this.onPressed,
-    required this.titulo,
-    this.padding = 0.0,
-    this.shadowColor,
-    this.elevation,
-    this.fixedSize,
-    this.primary,
-    this.onSurface
+    this.onPressed,
+    this.iconColor,
+    this.titulo = '',
+    this.cor = Colors.transparent,
   });
 
-
-
-   Widget returnBotao(){
-    return Padding(
-      padding: EdgeInsets.all(padding),
-      child: Center(
-        child: ElevatedButton (
-          style: ElevatedButton.styleFrom(
-             primary: primary,
-             onSurface: onSurface,
-             elevation: elevation,
-             shadowColor: shadowColor,
-             fixedSize: fixedSize,
-          ),
-          child: Text(this.titulo!),
-          onPressed: () => this.onPressed,
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      child: ElevatedButton(
+       child: Text(this.titulo!, style: TextStyle(color: Colors.white)),
+        style: ElevatedButton.styleFrom(
+          primary: this.cor,
+          onPrimary: Colors.black45,
+          fixedSize: Size(144, 44),
+          shape: const BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(2))),
         ),
+        onPressed: this.onPressed as void Function()?,
+      
       ),
-    );
-  }
-
-  Botao copyWith({
-    Size?    fixedSize,
-    double   padding = 0.0,
-    Color?   primary,
-    Color?   onSurface,
-    Color?   shadowColr,
-    String?  titulo,
-    double?  elevation,
-    required Function onPressed,
-    
-  }) {
-    return Botao(
-      onPressed:   onPressed,
-      padding:     padding,
-      titulo:      titulo        ?? this.titulo,
-      primary:     primary       ?? this.primary ,
-      elevation:   elevation     ?? this.elevation,
-      fixedSize:   fixedSize     ?? this.fixedSize,
-      onSurface:   onSurface     ?? this.onSurface,
-      shadowColor: shadowColr    ?? this.shadowColor,
     );
   }
 }
