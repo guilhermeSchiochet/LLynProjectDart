@@ -1,3 +1,7 @@
-class NotasEscolaresController{
-  
+class NotasEscolaresController {
+  static final NotasEscolaresController notasEscolares =
+      NotasEscolaresController._();
+  NotasEscolaresController._();
+
+
 }

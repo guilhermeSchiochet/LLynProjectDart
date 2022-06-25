@@ -23,11 +23,12 @@ class Notas  extends State<NotasEscolaresView> {
     return AppBar(
       title: Text('Notas escolares'),
       centerTitle: true,
-      leading: IconButton(icon: Icon(Icons.arrow_back), onPressed: () {Navigator.pop(context);},),
-      flexibleSpace: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [Colors.purple, Colors.red])
-        ),
+      backgroundColor: Color.fromARGB(255, 244, 67, 54),
+      leading: IconButton(
+        icon: Icon(Icons.arrow_back),
+        onPressed: () {
+          Navigator.pop(context);
+        },
       ),
     );
   }

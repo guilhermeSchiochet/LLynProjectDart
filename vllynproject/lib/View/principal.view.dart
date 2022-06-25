@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vllynproject/View/notas_escolares.view.dart';
 import 'package:vllynproject/componente/botao.dart';
+import 'package:vllynproject/componente/header.dart';
 
 class PrincipalView extends StatefulWidget {
   const PrincipalView({Key? key}) : super(key: key);
@@ -19,31 +20,20 @@ class _ListaEnqueteViewState extends State<PrincipalView> {
     return Scaffold(
       drawer: returnEndDrawer(), 
       body: this._montaConteudo(),
-      appBar: PreferredSize(
-        preferredSize: Size.fromRadius(30),
-        child: this._returnAppBar(),
-      )
-    );
-  }
-
-  AppBar _returnAppBar(){
-    return AppBar(
-      title: Text('LLynProject'),
-      centerTitle: true,
-      flexibleSpace: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [Color.fromARGB(255, 156, 39, 176), Color.fromARGB(255, 244, 67, 54)])
-        ),
-      ),
     );
   }
 
   Widget? _montaConteudo(){
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        this.returnBotao(),
-      ],
+    return Padding(
+        padding: EdgeInsets.all(10),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Header(),
+            this.returnBotao(),
+          ],
+        )
     );
   }
 
@@ -63,16 +53,9 @@ class _ListaEnqueteViewState extends State<PrincipalView> {
       child: ListView(
         padding: EdgeInsets.all(0.0),
         children: [
-          UserAccountsDrawerHeader(accountName: Text(nome), accountEmail: Text(gmail),
-          decoration: BoxDecoration(
-             gradient: LinearGradient(colors: [Colors.purple, Colors.red])
-          ),
-            currentAccountPicture: Center(
-              child: CircleAvatar(
-                backgroundImage: NetworkImage('https://picsum.photos/250?image=9'),
-                backgroundColor: Colors.transparent,
-              ),
-            ),
+          UserAccountsDrawerHeader(
+            accountName: Text(nome),
+            accountEmail: Text(gmail),
           ),
           ListTile(
             title:  Text("Fechar"),
